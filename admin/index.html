@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="regis">
+<head>
+	<meta charset="UTF-8">
+	<title ng-if="!title">SKERegis</title>
+	<title ng-if="title">{{title}} | SKERegis</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="container">
+	<div id="header" class="row">
+		<div id="logo"><a ng-href="#">Regis by SKE11</a></div>
+	</div>
+	<div ui-view>Starting application...</div>
+</div>
+<script src="assets/js/angular.min.js"></script>
+<script src="assets/js/angular-resource.min.js"></script>
+<script src="assets/js/angular-sanitize.min.js"></script>
+<script src="assets/js/angular-ui-router.min.js"></script>
+<script src="assets/js/controllers.js"></script>
+</body>
+</html>

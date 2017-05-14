@@ -1,0 +1,11 @@
+@font-face{
+	font-family: "Lato Light";
+	font-weight: 100;
+	src: url(../fonts/Lato-Lig.otf);
+}
+#logo{
+	font-size: 32pt;
+	font-family: "Lato Light", sans-serif;
+	font-weight: 100;
+	margin-bottom: 10px;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Regis by SKE11</title>
+	<link href='http://fonts.googleapis.com/css?family=Lato:100italic,300,300italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="pixie"></canvas>
+
+<div id="stage1" class="stage visible">
+	<div class="stagein">
+		<h1>Registration</h1>
+		<h2>Please press <strong>arrow key</strong> by your major.</h2>
+		<a href="Registration:CPE" class="cpe left"><span class="btn">&larr;</span> CPE</a>
+		<a href="Registration:SKE" class="ske right">SKE <span class="btn">&rarr;</span></a>
+		<div class="clear"></div>
+	</div>
+</div>
+
+<div id="stage2" class="stage">
+	<div class="stagein">
+		<h1>SKE Registration</h1>
+		<h2>Press <span class="btn">&uarr;</span><span class="btn">&darr;</span> to move, <span class="btn">Enter</span> to select, <span class="btn">Esc</span> to cancel.</h2>
+		<input type="text" id="search" placeholder="Search by name or surname">
+		<table id="searchres">
+		</table>
+	</div>
+</div>
+
+<div id="stage3" class="stage">
+	<div class="stagein">
+		<h1>Registration</h1>
+		<form action="#" autocomplete="off">
+			<div>
+				Name:
+				<input type="text" name="name" autofocus required>
+			</div>
+			<div>
+				Last name:
+				<input type="text" name="lastname" required>
+			</div>
+			<div>
+				Major
+				<select name="branch">
+					<option>CPE</option>
+					<option>SKE</option>
+				</select>
+			</div>
+			<div>
+				Year
+				<select name="year">
+					<option>4</option>
+					<option>3</option>
+					<option>2</option>
+					<option>1</option>
+				</select>
+			</div>
+			<button class="btn" type="submit">Save</button>
+		</form>
+	</div>
+</div>
+
+<div id="stage4" class="stage">
+	<div class="stagein">
+		<h1>Welcome</h1>
+		<h3>นาย มนัสวิน หาญมงคลชัย</h3>
+		<h2>Press <span class="btn">Enter</span> to confirm, <span class="btn">Esc</span> to cancel.</h2>
+	</div>
+</div>
+
+<script src="jquery-2.1.0.min.js"></script>
+<script src="pixie.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
