@@ -1,0 +1,48 @@
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th ng-click="sort='name';reverse=!reverse">
+				ชื่อ <i ng-if="sort=='name'" class="glyphicon" ng-class="{'glyphicon-sort-by-alphabet': !reverse, 'glyphicon-sort-by-alphabet-alt': reverse}"></i>
+			</th>
+			<th ng-click="sort='lastname';reverse=!reverse">
+				สกุล
+				 <i ng-if="sort=='lastname'" class="glyphicon" ng-class="{'glyphicon-sort-by-alphabet': !reverse, 'glyphicon-sort-by-alphabet-alt': reverse}"></i>
+			</th>
+			<th ng-click="sort='nick';reverse=!reverse">
+				ชื่อเล่น
+				 <i ng-if="sort=='nick'" class="glyphicon" ng-class="{'glyphicon-sort-by-alphabet': !reverse, 'glyphicon-sort-by-alphabet-alt': reverse}"></i>
+			</th>
+			<th ng-click="sort='branch';reverse=!reverse">
+				สาขา
+				 <i ng-if="sort=='branch'" class="glyphicon" ng-class="{'glyphicon-sort-by-alphabet': !reverse, 'glyphicon-sort-by-alphabet-alt': reverse}"></i>
+			</th>
+			<th ng-click="sort='year';reverse=!reverse">
+				ชั้นปี
+				 <i ng-if="sort=='year'" class="glyphicon" ng-class="{'glyphicon-sort-by-alphabet': !reverse, 'glyphicon-sort-by-alphabet-alt': reverse}"></i>
+			</th>
+			<th ng-click="sort='arrived';reverse=!reverse" style="width: 30%;">
+				<i ng-if="sort=='arrived'" class="glyphicon" ng-class="{'glyphicon-sort-by-alphabet': !reverse, 'glyphicon-sort-by-alphabet-alt': reverse}"></i>
+			</th>
+		</tr>
+		<tr>
+			<td colspan="6"><label class="col-sm-12">Search: <input type="text" ng-model="search" class="form-control"></label></td>
+		</tr>
+	</thead>
+	<tr ng-repeat="member in regis|filter:search|orderBy:sort:reverse track by member.id" ng-class="{success: member.arrived}" style="width: 30%;">
+		<td ng-bind="member.name"></td>
+		<td ng-bind="member.lastname"></td>
+		<td ng-bind="member.nick"></td>
+		<td ng-bind="member.branch"></td>
+		<td ng-bind="member.year"></td>
+		<td>
+			<div ng-if="member.arrived">
+				<span>{{member.arrived|date:"mediumTime"}}</span>
+				<button ng-click="setArrive(member, false)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button>
+			</div>
+			<div ng-if="!member.arrived">
+				<button ng-click="setArrive(member, true)" class="btn btn-success">มา</button>
+			</div>
+		</td>
+	</tr>
+</table>
+<a ui-sref="add" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> เพิ่ม</a>

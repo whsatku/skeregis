@@ -1,0 +1,9 @@
+{
+	"require": {
+		"silex/silex": "1.*",
+		"illuminate/database": "*"
+	},
+	"autoload": {
+		"psr-0": {"Grader": ".", "Regis": "."}
+	}
+}
